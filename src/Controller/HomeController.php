@@ -4,10 +4,9 @@ namespace PecidPHP\Controller;
 class HomeController extends BaseController {
 
     public function index() {
-        echo date('Y-m-d H:i:s', time());
-        $session = $this->container->get('session');
-        var_dump($session->get('userid'));
-        // $session->set('userid', 1);
+        $db = $this->container->get('db');
+        $res = $db->fetchAll('select * from users');
+        var_dump($res);die;
     }
 
 }
