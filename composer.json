@@ -17,8 +17,9 @@
     },
     "require": {
         "slim/slim": "^3.10",
-        "bryanjhv/slim-session": "^3.6",
-        "aura/sql": "^3.0"
+        "aura/sql": "^3.0",
+        "aura/session": "^2.1",
+        "monolog/monolog": "^1.23"
     },
     "autoload": {
         "psr-4": {

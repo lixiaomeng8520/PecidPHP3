@@ -4,6 +4,7 @@ use \Slim\App;
 define('PUBLIC_PATH', __DIR__);
 define('ROOT_PATH', dirname(PUBLIC_PATH));
 define('VENDOR_PATH', ROOT_PATH . '/vendor');
+define('DATA_PATH', ROOT_PATH . '/data');
 define('SRC_PATH', ROOT_PATH . '/src');
 define('INCLUDE_PATH', SRC_PATH . '/include');
 define('CONTROLLER_PATH', SRC_PATH . '/Controller');

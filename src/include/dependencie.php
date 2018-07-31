@@ -1,8 +1,39 @@
 <?php 
+// $container['errorHandler'] = function ($c) {
+//     return new \PecidPHP\ErrorHandler\Error;
+// };
+// $container['notFoundHandler'] = function ($c) {
+//     return new \PecidPHP\ErrorHandler\NotFound;
+// };
+// $container['notAllowedHandler'] = function ($c) {
+//     return new \PecidPHP\ErrorHandler\NotAllowed;
+// };
+// $container['phpErrorHandler'] = function ($c) {
+//     return new \PecidPHP\ErrorHandler\PhpError;
+// };
+$container['logger'] = function($c) {
+    $logger = new \Monolog\Logger('app');
+    $file_handler = new \Monolog\Handler\StreamHandler($c->get('settings')['logger']['path']);
+    $logger->pushHandler($file_handler);
+    return $logger;
+};
+
+
 
 $container['session'] = function ($c) {
-    return new \SlimSession\Helper;
+    $session_factory = new \Aura\Session\SessionFactory;
+    $session = $session_factory->newInstance($_COOKIE);
+    $session->setName('sid');
+    return $session;
 };
+
+$container['segment'] = function ($c) {
+    $session = $c->get('session');
+    $segment = $session->getSegment('PecidPHP3');
+    return $segment;
+};
+
+
 
 $container['db'] = function ($c) {
     $db = new \Aura\Sql\ExtendedPdo('mysql:host=127.0.0.1;dbname=test', 'root1', '');

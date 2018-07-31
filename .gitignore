@@ -1,2 +1,5 @@
 /vendor/
 /composer.lock
+
+/data/*
+!/data/README.md

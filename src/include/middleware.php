@@ -9,8 +9,8 @@ $app->add(function ($request, $response, $next) {
     return $response;
 });
 
-$app->add(new \Slim\Middleware\Session([
-    'name' => 'dummy_session',
-    'autorefresh' => true,
-    'lifetime' => '10 seconds'
-]));
+// $app->add(new \Slim\Middleware\Session([
+//     'name' => 'dummy_session',
+//     'autorefresh' => true,
+//     'lifetime' => '10 seconds'
+// ]));
