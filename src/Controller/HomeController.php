@@ -12,10 +12,12 @@ class HomeController extends BaseController {
         // $segment->set('foo', 'bar');
 
         // var_dump($_SESSION);
-        echo 1;
-        $logger = $this->container->get('logger');
-        $logger->addInfo('nihao');
-        echo 2;
+        // echo 1;
+        // $logger = $this->container->get('logger');
+        // $logger->addInfo('nihao');
+        // echo 2;
+        
+        
     }
 
 }

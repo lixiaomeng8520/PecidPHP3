@@ -1,16 +1,17 @@
 <?php 
-// $container['errorHandler'] = function ($c) {
-//     return new \PecidPHP\ErrorHandler\Error;
-// };
-// $container['notFoundHandler'] = function ($c) {
-//     return new \PecidPHP\ErrorHandler\NotFound;
-// };
-// $container['notAllowedHandler'] = function ($c) {
-//     return new \PecidPHP\ErrorHandler\NotAllowed;
-// };
-// $container['phpErrorHandler'] = function ($c) {
-//     return new \PecidPHP\ErrorHandler\PhpError;
-// };
+$container['errorHandler'] = function ($c) {
+    return new \PecidPHP\ErrorHandler\Error($c);
+};
+$container['notFoundHandler'] = function ($c) {
+    return new \PecidPHP\ErrorHandler\NotFound($c);
+};
+$container['notAllowedHandler'] = function ($c) {
+    return new \PecidPHP\ErrorHandler\NotAllowed($c);
+};
+$container['phpErrorHandler'] = function ($c) {
+    return new \PecidPHP\ErrorHandler\PhpError($c);
+};
+
 $container['logger'] = function($c) {
     $logger = new \Monolog\Logger('app');
     $file_handler = new \Monolog\Handler\StreamHandler($c->get('settings')['logger']['path']);

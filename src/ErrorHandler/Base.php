@@ -3,8 +3,9 @@ namespace PecidPHP\ErrorHandler;
 
 class Base extends \Slim\Handlers\AbstractError {
 
-    public function __invoke(\Psr\Http\Message\ServerRequestInterface $request, \Psr\Http\Message\ResponseInterface $response, \Throwable $error) {
-        return $response;
-    }
+    protected $container;
 
+    public function __construct(\Psr\Container\ContainerInterface $container) {
+        $this->container = $container;
+    }
 }
