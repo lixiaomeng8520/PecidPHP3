@@ -1,11 +1,8 @@
 <?php 
 
 $app->add(function ($request, $response, $next) {
-    date_default_timezone_set('Asia/Shanghai');
-    $start_time = microtime(true);
-    $response = $next($request, $response);
-    $end_time = microtime(true);
-    var_dump($end_time - $start_time);
+    date_default_timezone_set('Asia/Shanghai');    
+    $response = $next($request, $response);    
     return $response;
 });
 

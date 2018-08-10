@@ -17,7 +17,12 @@ class HomeController extends BaseController {
         // $logger->addInfo('nihao');
         // echo 2;
         
-        
+        $validator = $this->container->get('validator');
+
+        $userValidator = V::attribute('name', v::stringType()->length(1,32))
+                  ->attribute('birthdate', v::date()->age(18));
+
+        var_dump($validator['number']()->validate('2.2'));
     }
 
 }

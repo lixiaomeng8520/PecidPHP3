@@ -23,4 +23,6 @@ require INCLUDE_PATH . '/middleware.php';
 
 require INCLUDE_PATH . '/route.php';
 
+require INCLUDE_PATH . '/validator.php';
+
 $app->run();
