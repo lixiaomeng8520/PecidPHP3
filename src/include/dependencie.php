@@ -1,17 +1,17 @@
 <?php 
 /*-errorHandler-*/
-$container['errorHandler'] = function ($c) {
-    return new \PecidPHP\ErrorHandler\Error($c);
-};
-$container['notFoundHandler'] = function ($c) {
-    return new \PecidPHP\ErrorHandler\NotFound($c);
-};
-$container['notAllowedHandler'] = function ($c) {
-    return new \PecidPHP\ErrorHandler\NotAllowed($c);
-};
-$container['phpErrorHandler'] = function ($c) {
-    return new \PecidPHP\ErrorHandler\PhpError($c);
-};
+// $container['errorHandler'] = function ($c) {
+//     return new \PecidPHP\ErrorHandler\Error($c);
+// };
+// $container['notFoundHandler'] = function ($c) {
+//     return new \PecidPHP\ErrorHandler\NotFound($c);
+// };
+// $container['notAllowedHandler'] = function ($c) {
+//     return new \PecidPHP\ErrorHandler\NotAllowed($c);
+// };
+// $container['phpErrorHandler'] = function ($c) {
+//     return new \PecidPHP\ErrorHandler\PhpError($c);
+// };
 
 
 /*-logger-*/
@@ -40,5 +40,12 @@ $container['segment'] = function ($c) {
 /*-db-*/
 $container['db'] = function ($c) {
     $db = new \Aura\Sql\ExtendedPdo('mysql:host=127.0.0.1;dbname=test', 'root1', '');
+    return $db;
+};
+
+$container['sqlserver'] = function($c) {
+    $config = $c->get('settings')['sqlserver'];
+    $db = new \Aura\Sql\ExtendedPdo('dblib:host='.$config['host'].';dbname=TRSWCM', $config['user'], $config['pass']);
+    // var_dump($db);
     return $db;
 };

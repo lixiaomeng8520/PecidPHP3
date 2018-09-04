@@ -7,6 +7,11 @@ $settings = [
     ],
     'db' => [
         'host' => 'localhost'
+    ],
+    'sqlserver' => [
+        'host'=> '192.168.1.181',
+        'user'=> 'trs',
+        'pass'=> 'trs2006'
     ]
 ];
 
