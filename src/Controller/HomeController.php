@@ -35,22 +35,22 @@ class HomeController extends BaseController {
         // $config = $this->container->get('settings')['sqlserver'];
         // $this->pdo = new \PDO('dblib:host='.$config['host'].';dbname=TRSWCM', $config['user'], $config['pass']);
 
-        var_dump($res);
+        // var_dump($res);
 
-        $sourceid = $res[0]['docsource'];
-        $res = $sqlserver->fetchAll('select srcname from wcmsource where sourceid='.$sourceid);
-        var_dump(iconv('gbk', 'utf-8', $res[0]['srcname']));
+        // $sourceid = $res[0]['docsource'];
+        // $res = $sqlserver->fetchAll('select srcname from wcmsource where sourceid='.$sourceid);
+        // var_dump(iconv('gbk', 'utf-8', $res[0]['srcname']));
 
-        $res = $sqlserver->fetchAll('SELECT  COLLATIONPROPERTY(\'Chinese_PRC_Stroke_CI_AI_KS_WS\', \'CodePage\')');
-        var_dump($res);
+        // $res = $sqlserver->fetchAll('SELECT  COLLATIONPROPERTY(\'Chinese_PRC_Stroke_CI_AI_KS_WS\', \'CodePage\')');
+        // var_dump($res);
+
+
+        $str = 'http://zhibo.dahe.cn/yanyuvideo/room5.m3u8';
+        var_dump(str_replace('http://', 'https://', $str));
 
         
 
         return $response;
-    }
-
-    public function cdn() {
-        
     }
 
 }

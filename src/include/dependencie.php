@@ -38,8 +38,8 @@ $container['segment'] = function ($c) {
 
 
 /*-db-*/
-$container['db'] = function ($c) {
-    $db = new \Aura\Sql\ExtendedPdo('mysql:host=127.0.0.1;dbname=test', 'root1', '');
+$container['mysql'] = function ($c) {
+    $db = new \Aura\Sql\ExtendedPdo('mysql:host=127.0.0.1;dbname=test', 'root', '111111');
     return $db;
 };
 
@@ -49,3 +49,4 @@ $container['sqlserver'] = function($c) {
     // var_dump($db);
     return $db;
 };
+
