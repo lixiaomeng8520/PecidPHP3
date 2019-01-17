@@ -27,5 +27,11 @@
         "psr-4": {
             "PecidPHP\\": "src/"
         }
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.laravel-china.org/"
+        }
     }
 }
