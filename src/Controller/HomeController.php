@@ -30,8 +30,8 @@ class HomeController extends BaseController {
         // ini_set('mssql.textsize', '2147483647');
         // ini_set('mssql.charset', 'UTF-8');
 // header('Content-type:text/html;charset=gbk');
-        $sqlserver = $this->container->get('sqlserver');
-        $res = $sqlserver->fetchAll('select docpuburl, docsource from wcmdocument where docid=1635733');
+        // $sqlserver = $this->container->get('sqlserver');
+        // $res = $sqlserver->fetchAll('select docpuburl, docsource from wcmdocument where docid=1635733');
         // $config = $this->container->get('settings')['sqlserver'];
         // $this->pdo = new \PDO('dblib:host='.$config['host'].';dbname=TRSWCM', $config['user'], $config['pass']);
 
@@ -44,12 +44,8 @@ class HomeController extends BaseController {
         // $res = $sqlserver->fetchAll('SELECT  COLLATIONPROPERTY(\'Chinese_PRC_Stroke_CI_AI_KS_WS\', \'CodePage\')');
         // var_dump($res);
 
-
-        $str = 'http://zhibo.dahe.cn/yanyuvideo/room5.m3u8';
-        var_dump(str_replace('http://', 'https://', $str));
-
         
-
+        
         return $response;
     }
 
