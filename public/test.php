@@ -1,14 +1,5 @@
 <?php
 
-$func = function() {
-    echo 1;
-};
+$content = file_get_contents('php://input');
 
-class A {
-    private $a;
-}
-
-$a = new A();
-
-
-var_dump($a instanceof Callable);
+echo $content;
